@@ -6,7 +6,6 @@ personalinfovault = {}
 while True:
     while True:
         name = input("Please input your name: ")
-
         #add conditions such as it contains only letters, initial letter is capitalized while others are in lower case
         #if not:
             #print "Error: Please input a valid name and follow the format"
@@ -26,15 +25,20 @@ while True:
         #ask user to input age
     while True:
         age = int(input("How old are you?: "))
-
         #add conditions such as age >= 0
         #if not:
             #print "Error: Please input a valid age"
-        if age < 0 and age > 150:
-            print("Please provide a valid age")
+        if age < 0 or age > 150:
+            print("Please provide a valid age between 0 and 150")
 
         else:
             break
+    
+    personalinfovault = {
+        "name" : name,
+        "age"  : age,
+    }
+    
 
     #add the user input name and user input age to the dictionary
 
