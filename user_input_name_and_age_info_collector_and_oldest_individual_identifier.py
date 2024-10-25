@@ -1,8 +1,6 @@
 #declare personalinfovault as an empty array
 personalinfovault = {}
 
-#while True:
-    #ask user to input name (i.e Pat)
 while True:
     while True:
         while True:
@@ -36,10 +34,7 @@ while True:
                 break
     
         #Store the user's information to the dictionary
-        user_information = {
-            "name" : name,
-            "age"  : age,
-        }
+        personalinfovault[name]= age
 
         #Ask user if he/she would like to input another entry
         retry = input("Would you like to input another entry? (yes/no): ")
@@ -51,13 +46,14 @@ while True:
     #if the response is no
         #print the name and age of the oldest individual
     elif retry == "no":
-        print("Request Accepted: Please exit")
+        print(f"The oldest individual is {name}, he/she is {age} years old.")
         break
 
-#declare oldest age as 0
-#declare oldest name as a blank string
+#determines the oldest individual
+oldest_age = 0
+oldest_name = ("")
 
-    #for each entry in personalinfovaul set
-        #entry.age > oldest age
-        #oldest age > entry.age
-        #oldest name > entry.name
+for name, age in personalinfovault.items():
+    if age > oldest_age:
+        oldest_age = age
+        oldest_name = name
