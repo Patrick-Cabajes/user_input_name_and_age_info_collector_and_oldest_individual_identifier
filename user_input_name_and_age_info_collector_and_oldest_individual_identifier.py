@@ -3,20 +3,22 @@ personalinfovault = {}
 
 while True:
     while True:
+        #while True:
+            #ask user to input name
         while True:
             name = input("Please input your name: ")
             #add conditions such as it contains only letters, initial letter is capitalized while others are in lower case
             #if not:
-                #print "Error: Please input a valid name and follow the format"
+                #print an error message
             if not name.isalpha():
                 print("Error: Please input letter only")
-    
+
             elif not name.istitle():
                 print("Error: All characters should be in lowercase except the initial letter")
-     
+
             elif len(name) <2:
                 print("Error: Please provide a longer name")
-        
+
             else:
                 break
 
@@ -26,7 +28,7 @@ while True:
             age = int(input("How old are you?: "))
             #add conditions such as age >= 0
             #if not:
-                #print "Error: Please input a valid age"
+                #print an error message
             if age < 0 or age > 150:
                 print("Error: Please provide a valid age between 0 and 150")
 
@@ -37,12 +39,15 @@ while True:
         personalinfovault[name]= age
 
         #Ask user if he/she would like to input another entry
-        retry = input("Would you like to input another entry? (yes/no): ")
+        while True:
+            retry = input("Would you like to input another entry? Please input 'yes' or 'no'): ")
+            if retry in ["yes", "no"]:
+                break
         break
         
     if retry == "yes":
         print("Request Accepted: Please input a new entry")
-        
+    
     #if the response is no
         #print the name and age of the oldest individual
     elif retry == "no":
@@ -57,3 +62,6 @@ for name, age in personalinfovault.items():
     if age > oldest_age:
         oldest_age = age
         oldest_name = name
+
+#optional: print the collected information in personalinfovault
+#print("Collected Information:", personalinfovault)
