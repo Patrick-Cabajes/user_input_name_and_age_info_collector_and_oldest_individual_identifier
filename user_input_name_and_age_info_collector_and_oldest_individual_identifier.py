@@ -64,4 +64,4 @@ for name, age in personalinfovault.items():
         oldest_name = name
 
 #optional: print the collected information in personalinfovault
-#print("Collected Information:", personalinfovault)
+print("Collected Information:", personalinfovault)
